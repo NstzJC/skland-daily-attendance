@@ -14,13 +14,6 @@ on:
         required: false
       MAX_RETRIES:
         required: false
-    inputs:
-      repository:
-        description: The repository to run the workflow on
-        default: enpitsuLin/skland-daily-attendance
-        required: false
-        type: string
-
 jobs:
   attendance:
     runs-on: ubuntu-latest
@@ -28,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          repository: ${{ inputs.repository || github.repository }}
+          repository: enpitsuLin/skland-daily-attendance
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
